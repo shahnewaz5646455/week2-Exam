@@ -1,0 +1,135 @@
+.product-card{
+    width: 250px;
+    height: 520px;
+    margin: 5px;
+    border-radius: 8px;
+    background-color: rgba(5, 255, 247, 0.214);
+}
+.gg{
+    width: 100%;
+}
+.info{
+    display: flex;
+    margin: auto;
+    margin-bottom: 5px;
+    padding: 5px;
+    width: 200px;
+    height: 200px;
+    justify-content: center;
+    flex-wrap: wrap;
+    border-radius: 8px;
+    background-color: rgba(255, 5, 147, 0.214);
+}
+.details{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+    height: auto;
+    margin: 20px;
+    border-radius: 8px;
+    background-color: rgb(255, 255, 255);
+
+}
+.add-card{
+    width: 100%;
+    height: auto;
+    margin: 10px;
+    box-shadow: 4px 4px 8px rgb(48, 49, 49);
+    border-radius: 8px;
+    background-color: rgb(33, 206, 177);
+}
+.cart-img{
+    width: 70px;
+}
+.s11{
+    width: 300px;
+    padding: 10px;
+    margin: auto;
+    height: 600px;
+    margin: 10px;
+    box-shadow: 4px 4px 8px rgb(48, 49, 49);
+    border-radius: 8px;
+    background-color: rgb(255, 255, 255);
+
+}
+.cart-container{
+    width:800px ;
+    background-color: #fff;
+    margin: 10px;
+    border-radius: 5px;
+    padding: 10px;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.product-container{
+    display: flex;
+    justify-content: space-around;
+    
+    flex-wrap: wrap;
+    border-radius: 8px;
+    width: 900px;
+    height: auto;
+
+}
+.add-group{
+
+    
+    
+    flex-wrap: wrap;
+    box-shadow: 4px 4px 8px rgb(48, 49, 49);
+    border-radius: 8px;
+    width: 400px;
+    height: 2500px;
+
+
+}
+.parent{
+    display: flex;
+    justify-content: space-around;
+    
+    flex-wrap: wrap;
+
+}
+.card-img{
+    width: 200px;
+    margin: auto;
+    margin-top: 5px;
+}
+.img{
+    width: 150px;
+    
+    border-radius:50%;
+
+}
+.bt{
+    border: none;
+    border-radius: 8px;
+    padding: 8px;
+    background-color: rgb(237, 17, 76);
+    color: aliceblue;margin: 8px;
+}
+.pt1{
+    border: none;
+    border-radius: 8px;
+    padding: 8px;
+    background-color: rgba(8, 255, 160, 0.286);
+    color: rgb(0, 0, 0);margin: 8px;
+}
+
+.sea{
+    
+    width: 500px;
+    padding: 20px;
+    border-radius: 10px;
+}
+.sear-container{
+    margin: 30px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+}
