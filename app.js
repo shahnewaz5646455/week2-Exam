@@ -3,6 +3,8 @@
 
 
 
+
+
 document.getElementById("hand").addEventListener("click",(event)=>{
     var productContainer = document.getElementById('product-container');
     
@@ -44,9 +46,11 @@ const displayProduct=(data)=>{
     console.log(data.player);
     data.player.forEach(p => {
         console.log(p.strPlayer);
+        
 
         const div=document.createElement("div");
             div.classList.add("product-card");
+            let link="https://www.youtube.com/";
            
             div.innerHTML=`
             <div class="card-img">
@@ -59,9 +63,14 @@ const displayProduct=(data)=>{
             <h5 class="text-center mt-3 fw-bold">Number : ${p.idPlayer}</h5>
             <h5 class="text-center mt-3 fw-bold">Date Of Birth : ${p.dateBorn}</h5>
             <h5 class="text-center mt-3 fw-bold">Weight : ${p.strWeight}</h5>
+            <div class="icon-container">
+            <i class="icc2 fa-brands fa-facebook"><a class="deco fw-bold"  href=${p.strFacebook}>Facebook</a></i>
+            <i class="icc2 fa-brands fa-instagram"><a class="deco fw-bold"  href=${p.strInstagram}>Instagram</a></i>
+            <i class="icc2 fa-brands fa-twitter"><a class="deco fw-bold"  href=${p.strTwitter}>Twitter</a></i>
+            </div>
             <button id="hand" onclick="kk('${p.strPlayer}','${p.strThumb}','${p.strGender}')" class="bt">Add Group</button>
             <!-- Button trigger modal -->
-            <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            <button type="button" onclick="mm('${p.idPlayer}')" id="details" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
               Details
             </button>
             
@@ -73,14 +82,8 @@ const displayProduct=(data)=>{
                     <h1 class="modal-title fs-5" id="exampleModalLabel">Player Information</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                   </div>
-                  <div class="modal-body">
-                  <h5 class="text-center mt-3 fw-bold">Name : ${p.strPlayer}</h5>
-                  <h5 class="text-center mt-3 fw-bold">ID : ${p.idPlayer}</h5>
-                  <h5 class="text-center mt-3 fw-bold">Country : ${p.strNationality}</h5>
-                  <h5 class="text-center mt-3 fw-bold">Number : ${p.idPlayer}</h5>
-                  <h5 class="text-center mt-3 fw-bold">Date Of Birth : ${p.dateBorn}</h5>
-                  <h5 class="text-center mt-3 fw-bold">Weight : ${p.strWeight}</h5>
-                  <h5 class="text-center mt-3 fw-bold">Description : ${p.strDescriptionEN}</h5>
+                  <div class="modal-body" id="modal-body">
+                  
                   </div>
                   <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -92,7 +95,21 @@ const displayProduct=(data)=>{
 
             
             `
+
+            
+            
             container.appendChild(div);
+
+
+
+
+           
+          
+          
+          
+
+          
+           
 
             
        
@@ -128,6 +145,7 @@ const kk=(name,img,gender)=>{
     console.log(name,img);
     if (convert>11) {
         console.log("you can not add");
+        alert("You Can Not Add")
         document.getElementById("v21").innerText="you can not add";
         document.getElementById("count").innerText=11;
         
@@ -152,3 +170,41 @@ const kk=(name,img,gender)=>{
 
     
 };
+const mm=(id)=>{
+  document.getElementById("modal-body").innerHTML="";
+                
+      let url = `https://www.thesportsdb.com/api/v1/json/3/lookupplayer.php?id=${id}`;
+      fetch(url)
+      .then(res=>res.json())
+      .then(data=>{
+    
+       out(data.players[0])
+        
+    });
+
+}
+
+
+const out=(player)=>{
+  console.log(player.strPlayer);
+  const con=document.getElementById("modal-body");
+  const div=document.createElement("div");
+            div.classList.add("moda-info");
+            div.innerHTML=`
+            <h5 class="text-center mt-3 fw-bold">Name : ${player.strPlayer}</h5>
+            <h5 class="text-center mt-3 fw-bold">ID : ${player.idPlayer}</h5>
+            <h5 class="text-center mt-3 fw-bold">Country : ${player.strNationality}</h5>
+            <h5 class="text-center mt-3 fw-bold">Number : ${player.idPlayer}</h5>
+            <h5 class="text-center mt-3 fw-bold">Date Of Birth : ${player.dateBorn}</h5>
+            <h5 class="text-center mt-3 fw-bold">Weight : ${player.strWeight}</h5>
+            <h5 class="text-center mt-3 fw-bold">Description : ${player.strDescriptionEN}</h5>
+            
+            
+            `
+
+            con.appendChild(div);
+
+
+
+
+}
