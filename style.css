@@ -1,6 +1,6 @@
 .product-card{
     width: 250px;
-    height: 520px;
+    height: 600px;
     margin: 5px;
     border-radius: 8px;
     background-color: rgba(5, 255, 247, 0.214);
@@ -132,4 +132,15 @@
     justify-content: center;
     flex-wrap: wrap;
 
+}
+.icc2{
+    
+    
+    margin: 10px;
+}
+.deco{
+    padding: 5px;
+
+    text-decoration: none;
+    color: #00ff91;
 }
