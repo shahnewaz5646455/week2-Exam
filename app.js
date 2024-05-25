@@ -58,7 +58,7 @@ const displayProduct=(data)=>{
             </div>
                     
             <h5 class="text-center mt-3 fw-bold">Name : ${p.strPlayer}</h5>
-            <h5 class="text-center mt-3 fw-bold">Name : ${p.strGender}</h5>
+            <h5 class="text-center mt-3 fw-bold">Gender : ${p.strGender}</h5>
             <h5 class="text-center mt-3 fw-bold">Country : ${p.strNationality}</h5>
             <h5 class="text-center mt-3 fw-bold">Number : ${p.idPlayer}</h5>
             <h5 class="text-center mt-3 fw-bold">Date Of Birth : ${p.dateBorn}</h5>
